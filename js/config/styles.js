@@ -8,4 +8,4 @@ export const colours = {
 export const fonts = {
     regular: 'Montserrat-Regular',
     light: 'Montserrat-Light'
-}
+};
