@@ -2,6 +2,7 @@ import React from 'react';
 import { ScrollView, View, Text } from 'react-native';
 import { styles } from './styles';
 import ConductItem from '../../components/ConductItem'
+
 const About = ({ allConducts }) => {
     console.log('allConducts:', allConducts);
 

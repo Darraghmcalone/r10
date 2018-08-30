@@ -1,15 +1,9 @@
-import React, { Component } from 'react';
 import { createStackNavigator } from 'react-navigation';
-import { Text } from 'react-native';
-import { AboutContainer } from '../screens/About';
+import NavigationLayout from './NavigationLayout';
 
 const RootStack = createStackNavigator(
     {
-        About: {
-            screen: AboutContainer,
-            navigationOptions: {
-                title: 'About',
-            },
-        }
-    });
+        Layout: NavigationLayout
+    },
+);
 export default RootStack;
