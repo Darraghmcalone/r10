@@ -11,6 +11,7 @@ export const styles = StyleSheet.create({
         margin: 12,
     },
     conductText: {
+        fontFamily: fonts.light,
         fontSize: 20,
         margin: 12,
     }

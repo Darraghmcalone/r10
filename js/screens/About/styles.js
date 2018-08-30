@@ -9,11 +9,13 @@ export const styles = StyleSheet.create({
     },
     paragraph: {
         fontSize: 20,
+        fontFamily: fonts.regular,
         textAlign: 'left',
         margin: 13,
     },
     heading: {
         fontSize: 24,
+        fontFamily: fonts.light,
         fontWeight: 'bold',
         margin: 13,
     }
