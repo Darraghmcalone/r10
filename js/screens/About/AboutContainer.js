@@ -24,7 +24,7 @@ export default class AboutContainer extends Component {
             <Query query={allConductsquery}>
                 {
                     ({ loading, data }) => {
-                        if (true) {
+                        if (loading || !data) {
                             return <Loader />
                         }
                         return <About allConducts={data.allConducts} />
