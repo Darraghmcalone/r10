@@ -1,7 +1,17 @@
 import { StyleSheet } from 'react-native';
+import { colours } from '../../config/styles'
+import { fonts } from '../../config/styles'
+
 
 export const styles = StyleSheet.create({
-conductHeader: {
-    marginTop: 20,
-}
+    conductHeader: {
+        fontFamily: fonts.regular,
+        color: colours.purple,
+        fontSize: 20,
+        margin: 12,
+    },
+    conductText: {
+        fontSize: 20,
+        margin: 12,
+    }
 });

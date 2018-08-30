@@ -23,9 +23,10 @@ const About = ({ allConducts }) => {
             </Text>
             <View>
                 {allConducts.map((item) => <ConductItem key={item.id} itemData={item} />)}
-
-
             </View>
+            <Text style={styles.heading}>
+                © RED ACADEMY 2017
+            </Text>
         </ScrollView>
     );
 }
