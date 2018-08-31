@@ -9,7 +9,7 @@ import { FavesContainer } from '../screens/Faves';
 import { ScheduleContainer } from '../screens/Schedule';
 import { SessionContainer } from '../screens/Session';
 import { SpeakerContainer } from '../screens/Speaker'
-
+import { MapContainer } from '../screens/Map'
 
 const AboutStack = createStackNavigator(
     {
@@ -22,7 +22,7 @@ const AboutStack = createStackNavigator(
 
 const FavesStack = createStackNavigator(
     {
- 
+
         Faves: FavesContainer,
     },
     {
@@ -56,6 +56,14 @@ const SpeakerStack = createStackNavigator(
         headermode: 'none'
     }
 );
+const MapStack = createStackNavigator(
+    {
+        Map: MapContainer
+    },
+    {
+        headermode: 'none'
+    }
+);
 // Dedicated stacks for Schedule and Faves will go here too!
 
 export default createBottomTabNavigator(
@@ -64,7 +72,8 @@ export default createBottomTabNavigator(
         Faves: { screen: FavesStack },
         Schedule: { screen: ScheduleStack },
         Session: { screen: SessionStack },
-        Speaker: { screen: SpeakerStack }
+        Speaker: { screen: SpeakerStack },
+        Map:{ screen: MapStack }
     },
     {
         tabBarOptions: {
