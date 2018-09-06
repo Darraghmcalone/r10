@@ -15,18 +15,18 @@ export default class SessionItem extends Component {
                         <Text>{item.title}</Text>
                         <Text>{item.location}</Text>
                     </View>}
-                renderSectionHeader={({ section, onPress }) =>
-                    <TouchableHighlight
-                        underlayColor={"transparent"}
-                        onPress={onPress}
-                    >
-                        <Text style={styles.eventTitle}>
-                            {formatAMPM(section.title)}
-                        </Text>
-                    </TouchableHighlight>
-                }
-                sections={sessions}
-                keyExtractor={(item, index) => item + index}
+                    renderSectionHeader={({ section, onPress }) =>
+                        <TouchableHighlight
+                            underlayColor={"transparent"}
+                            onPress={() => this.props.navigation.navigate('Session')}
+                        >
+                            <Text style={styles.eventTitle}>
+                                {formatAMPM(section.title)}
+                            </Text>
+                        </TouchableHighlight>
+                    }
+                    sections={sessions}
+                    keyExtractor={(item, index) => item + index}
                 />
             </View>
         );
