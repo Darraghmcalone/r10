@@ -26,7 +26,7 @@ export default class ScheduleContainer extends Component {
                         if (loading || !data) {
                             return <Loader />
                         }
-                        return <Schedule allSessions={data.allSessions} />
+                        return <Schedule allSessions={formatSessionData(data.allSessions)} />
                     }
                 }
             </Query>

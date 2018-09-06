@@ -8,7 +8,7 @@ const Schedule = ({ allSessions }) => {
     return (
         <ScrollView>
             <View>
-                {allSessions.map((item) => <SessionItem key={item.id} itemData={item} />)}
+            <SessionItem sessions={allSessions} />
             </View>
         </ScrollView>
     )

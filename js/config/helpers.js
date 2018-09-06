@@ -1,15 +1,15 @@
-export const formatSessionData = sessions => {
-    return sessions
-      .reduce((acc, curr) => {
-        const timeExists = acc.find(section => section.title === curr.startTime);
-        timeExists
-          ? timeExists.data.push(curr)
-          : acc.push({ title: curr.startTime, data: [curr] });
-        return acc;
-      }, [])
-      .sort((a, b) => a.title - b.title);
-  };
-  
+export const formatSessionData = (sessions) => {
+  return sessions
+    .reduce((accumulator, currentValue) => {
+      const timeExists = accumulator.find(section => section.title === currentValue.startTime);
+      timeExists
+        ? timeExists.data.push(currentValue)
+        : accumulator.push({ title: currentValue.startTime, data: [currentValue] });
+      return accumulator;
+    }, [])
+    .sort((a, b) => a.title - b.title);
+};
+
   export const formatAMPM = (date) => {
     var dateObject = new Date(date);
     var hours = dateObject.getHours();
