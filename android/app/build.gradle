@@ -94,8 +94,9 @@ def enableSeparateBuildPerCPUArchitecture = false
 def enableProguardInReleaseBuilds = false
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdkVersion 26
+    buildToolsVersion "25.0.0"
+
 
     defaultConfig {
         applicationId "com.r10"

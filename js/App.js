@@ -11,8 +11,6 @@ export default class App extends Component {
     );
   }
 }
-import Realm from "realm";
-import Faves from './screens/Faves/Faves';
 
 
 
