@@ -1,8 +1,9 @@
 import { createStackNavigator } from 'react-navigation';
-import NavigationLayout from './NavigationLayout';
+import NavigationLayout from './Nav';
+
 const RootStack = createStackNavigator(
     {
-        Layout: NavigationLayout
+        Layout: NavigationLayout,
     },
     {
         mode: 'modal',
