@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     },
 
 })
-const GradientHeader = props => (
+const GradientHeader = (props) => (
     <View style={styles.gradientHeader}>
         <LinearGradient
             colors={[colours.red, colours.purple]}
@@ -23,7 +23,7 @@ const GradientHeader = props => (
     </View>
 );
 
-export const sharedNavigationOptions = navigation => ({
+export const sharedNavigationOptions = (navigation) => ({
     headerBackTitle: null,
     header: props => <GradientHeader {...props} />,
     headerStyle: {
