@@ -7,7 +7,6 @@ import { formatAMPM } from '../../config/helpers'
 export default class SessionItem extends Component {
     render() {
         const { sessions } = this.props;
-
         return (
             <View>
                 <SectionList
@@ -18,7 +17,7 @@ export default class SessionItem extends Component {
                     renderSectionHeader={({ section, onPress }) =>
                         <TouchableHighlight
                             underlayColor={"transparent"}
-                            onPress={() => this.props.navigation.navigate('Session')}
+                            onPress={() => this.props.navigation('Session')}
                         >
                             <Text style={styles.eventTitle}>
                                 {formatAMPM(section.title)}

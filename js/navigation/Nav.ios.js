@@ -1,7 +1,5 @@
 import React from 'react';
 import {
-    createDrawerNavigator,
-    DrawerNavigator,
     createStackNavigator,
     createBottomTabNavigator
 } from 'react-navigation';
@@ -14,8 +12,6 @@ import { SessionContainer } from '../screens/Session';
 import { SpeakerContainer } from '../screens/Speaker'
 import { MapContainer } from '../screens/Map'
 import { sharedNavigationOptions } from './config';
-
-
 
 const AboutStack = createStackNavigator(
     {

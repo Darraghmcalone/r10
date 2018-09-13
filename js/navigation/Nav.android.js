@@ -55,6 +55,7 @@ const MapStack = createStackNavigator(
     },
     {
         navigationOptions: ({ navigation }) => ({
+            drawerLabel: 'mahjghp',
             title: navigation.state.routeName,
             ...sharedNavigationOptions(navigation)
         })
