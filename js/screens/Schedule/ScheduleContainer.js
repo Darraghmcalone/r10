@@ -3,7 +3,7 @@ import Schedule from './Schedule';
 import Loader from '../../components/Loader'
 import gql from 'graphql-tag'
 import { Query } from 'react-apollo';
-import { formatSessionData } from '../../config/helpers';
+import { formatSessionData } from '../../lib/helpers';
 
 const allSessionsQuery = gql`
     query {

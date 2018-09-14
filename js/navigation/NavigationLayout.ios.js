@@ -9,7 +9,6 @@ import { colours } from '../config/styles';
 import { FavesContainer } from '../screens/Faves';
 import { ScheduleContainer } from '../screens/Schedule';
 import { SessionContainer } from '../screens/Session';
-import { SpeakerContainer } from '../screens/Speaker'
 import { MapContainer } from '../screens/Map'
 import { sharedNavigationOptions } from './config';
 

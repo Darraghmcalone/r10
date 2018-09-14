@@ -1,16 +1,17 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Platform, StyleSheet, View } from 'react-native';
 import { Header } from 'react-navigation';
 import LinearGradient from 'react-native-linear-gradient';
-import { colours, fonts } from '../config/styles'
+import Icon from 'react-native-vector-icons/Ionicons';
+import { colours, fonts } from '../config/styles';
 
-export const styles = StyleSheet.create({
+const styles = StyleSheet.create({
     gradientHeader: {
-        backgroundColor: 'white',
+        backgroundColor: colours.white,
         overflow: 'hidden'
-    },
+    }
+});
 
-})
 const GradientHeader = (props) => (
     <View style={styles.gradientHeader}>
         <LinearGradient
@@ -23,16 +24,30 @@ const GradientHeader = (props) => (
     </View>
 );
 
+const MenuButton = ({ navigation }) => (
+    <Icon
+        name="md-menu"
+        size={25}
+        color={colours.white}
+        onPress={navigation.openDrawer}
+        style={{ marginLeft: fonts.baseSize * 0.67 }}
+    />
+);
+
 export const sharedNavigationOptions = (navigation) => ({
     headerBackTitle: null,
-    header: props => <GradientHeader {...props} />,
+    header: (props) => <GradientHeader {...props} />,
     headerStyle: {
         backgroundColor: 'transparent',
-        color: colours.white,
-        fontFamily: fonts.regurlar
     },
+    headerTintColor: colours.white,
     headerTitleStyle: {
         color: colours.white,
-        fontFamily: fonts.regurlar
-    }
+        fontFamily: fonts.fontMain
+    },
+    ...Platform.select({
+        android: {
+            headerLeft: <MenuButton navigation={navigation} />
+        }
+    })
 });
