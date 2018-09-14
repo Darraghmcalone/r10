@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Text, TouchableHighlight, View } from 'react-native';
 import { withNavigation } from 'react-navigation';
-
 import { colours } from '../../config/styles';
 import { styles } from './styles';
 
