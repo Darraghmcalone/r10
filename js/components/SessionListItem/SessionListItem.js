@@ -4,6 +4,7 @@ import { Text, TouchableHighlight, View } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import { colours } from '../../config/styles';
 import { styles } from './styles';
+import Icons from 'react-native-vector-icons/Ionicons';
 
 const onItemPress = (navigation, sessionItemData) => {
     console.log('onItemPress: sessionItemData:', sessionItemData);
@@ -21,6 +22,7 @@ const SessionListItem = ({ navigation, sessionItemData }) => {
                 <Text style={styles.title}>{sessionItemData.title}</Text>
                 <View style={styles.sessionItemMeta}>
                     <Text style={styles.location}>{sessionItemData.location}</Text>
+                    <Icons name={'ios-heart'} />
                 </View>
             </View>
         </TouchableHighlight>

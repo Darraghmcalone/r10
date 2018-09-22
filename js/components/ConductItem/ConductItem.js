@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, Text, LayoutAnimation, Animated, TouchableOpacity } from 'react-native';
+import { View, Text, LayoutAnimation, Animated, TouchableOpacity,  Platform,
+    UIManager } from 'react-native';
 import { styles } from './styles';
 
 export default class ConductItem extends Component {
@@ -9,6 +10,10 @@ export default class ConductItem extends Component {
         this.state = {
             open: false,
             rotate: new Animated.Value(0)
+        }
+        if (Platform.OS === "android") {
+            UIManager.setLayoutAnimationEnabledExperimental &&
+                UIManager.setLayoutAnimationEnabledExperimental(true);
         }
     }
     render() {

@@ -5,6 +5,7 @@ import moment from 'moment';
 import { styles } from './styles';
 import Separator from '../../components/Separator';
 import SessionSpeaker from '../../components/SessionSpeaker';
+import Icons from 'react-native-vector-icons/Ionicons';
 
 const Session = ({ speakerData, sessionItemData }) => {
     console.log('Session: sessionItemData:', sessionItemData);
@@ -13,6 +14,7 @@ const Session = ({ speakerData, sessionItemData }) => {
         <ScrollView style={styles.container}>
             <View style={styles.sessionMeta}>
                 <Text style={styles.location}>{sessionItemData.location}</Text>
+                <Icons name={'ios-heart'} />
             </View>
             <Text style={styles.title}>{sessionItemData.title}</Text>
             <Text style={styles.time}>
@@ -25,6 +27,7 @@ const Session = ({ speakerData, sessionItemData }) => {
                 <Text style={styles.description}>{sessionItemData.description}</Text>
             )}
             {speakerData.name && <SessionSpeaker speakerData={speakerData} />}
+            
             <Separator />
         </ScrollView>
     );

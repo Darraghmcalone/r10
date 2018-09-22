@@ -84,6 +84,7 @@ export default MyApp = createDrawerNavigator(
         About: AboutStack,
     },
     {
+   
         drawerWidth: 200,
         contentOptions: {
             activeTintColor: colours.purple,

@@ -20,3 +20,10 @@ export const styles = StyleSheet.create({
         fontSize: 12,
     },
 });
+export const HeartButton = ({ navigation }) => (
+    <Icon
+        name="md-heart"
+        size={25}
+        color={colours.red}
+    />
+);

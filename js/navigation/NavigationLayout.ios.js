@@ -3,14 +3,16 @@ import {
     createStackNavigator,
     createBottomTabNavigator
 } from 'react-navigation';
+import { sharedNavigationOptions } from './config';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { AboutContainer } from '../screens/About';
 import { colours } from '../config/styles';
 import { FavesContainer } from '../screens/Faves';
+import { MapContainer } from '../screens/Map'
 import { ScheduleContainer } from '../screens/Schedule';
 import { SessionContainer } from '../screens/Session';
-import { MapContainer } from '../screens/Map'
-import { sharedNavigationOptions } from './config';
+import { SpeakerContainer } from '../screens/Speaker';
+
 
 const AboutStack = createStackNavigator(
     {
@@ -40,6 +42,7 @@ const ScheduleStack = createStackNavigator(
     {
         Schedule: ScheduleContainer,
         Session: SessionContainer,
+        Speaker: SpeakerContainer
     },
     {
         navigationOptions: ({ navigation }) => ({
