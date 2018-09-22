@@ -11,6 +11,7 @@ import { ScheduleContainer } from '../screens/Schedule';
 import { AboutContainer } from '../screens/About';
 import { MapContainer } from '../screens/Map';
 import { SessionContainer } from '../screens/Session';
+import { SpeakerContainer } from '../screens/Speaker';
 
 const renderIcon = (iconName, tintColor) => (
     <Icon name={iconName} size={25} color={tintColor} />
@@ -42,6 +43,7 @@ const ScheduleStack = createStackNavigator(
     {
         Schedule: ScheduleContainer,
         Session: SessionContainer,
+        Speaker: SpeakerContainer
     },
     {
         navigationOptions: ({ navigation }) => ({
