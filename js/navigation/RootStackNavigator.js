@@ -5,9 +5,7 @@ import { SpeakerContainer } from '../screens/Speaker';
 const RootStack = createStackNavigator(
     {
         Layout: NavigationLayout,
-        Speaker: {
-            screen: SpeakerContainer
-          }
+        Speaker: SpeakerContainer
     },
     {
         mode: 'modal',

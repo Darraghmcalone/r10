@@ -1,44 +1,33 @@
 import Realm from "realm";
 
-const FaveSchema = {
-    name: 'Fave',
-    primaryKey: 'id',
-    properties: {
-      id: "string",
-      faved_on: "date"
-    }
-  };
-  
-  // let favesId = "1";
-  
-  // faves.filtered('id==$0', favesId);
-  const realm = new Realm({ schema: [FaveSchema] });
-  console.log('the path is:', realm.path);
-  
-  // Create a Fave object
-  export const newFave = (id) => {
-    realm.write(() => {
-      realm.create("Fave", { id: id, faved_on: new Date() });
-    })
-  };
-  
-  export const removeFave = (id) => {
-    realm.write(() => {
-      let allFaves = realm.objects("Fave");
-      let faveId = id;
-      let currentFave = allFaves.filtered('id == $0', faveId);
-      realm.delete(currentFave);
-  
-    })
+const faveSchema = {
+  name: "Fave",
+  primaryKey: "id",
+  properties: {
+    id: "string",
+    favedOn: "date"
   }
-  
-  export const queryAllFaves = () => {
-    let allFaves = realm.objects("Fave");
-    let ascFaves = allFaves.sorted("id");
-    return ascFaves;
-  }
-  
-  
-  export default realm;
-  
+};
+
+const realm = new Realm({ schema: [faveSchema] });
+
+export default realm;
+
+export const addFave = id => {
+  realm.write(() => {
+    const favedOn = new Date();
+    realm.create("Fave", { id, favedOn });
+  });
+};
+
+export const removeFave = id => {
+  realm.write(() => {
+    const favToDelete = realm.objects("Fave").filtered(`id ==$0`, id);
+    realm.delete(favToDelete);
+  });
+};
+
+export const getFaves = () => {
+  return realm.objects("Fave");
+};
  

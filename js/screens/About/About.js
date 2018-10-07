@@ -5,14 +5,12 @@ import ConductItem from '../../components/ConductItem'
 
 const About = ({ allConducts }) => {
     console.log('allConducts:', allConducts);
-
     return (
         <ScrollView style={styles.container}>
             <Image
               style={ styles.image }
               source={require('../../assets/images/r10_logo.png')}
             />
-
             <Text style={styles.paragraph}>
                 R10 is a conference that focuses on just about
                 any topic related to dev.

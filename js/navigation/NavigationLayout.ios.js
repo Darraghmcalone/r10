@@ -11,7 +11,7 @@ import { FavesContainer } from '../screens/Faves';
 import { MapContainer } from '../screens/Map'
 import { ScheduleContainer } from '../screens/Schedule';
 import { SessionContainer } from '../screens/Session';
-import { SpeakerContainer } from '../screens/Speaker';
+
 
 
 const AboutStack = createStackNavigator(
@@ -42,7 +42,6 @@ const ScheduleStack = createStackNavigator(
     {
         Schedule: ScheduleContainer,
         Session: SessionContainer,
-        Speaker: SpeakerContainer
     },
     {
         navigationOptions: ({ navigation }) => ({
@@ -87,8 +86,6 @@ export default createBottomTabNavigator(
                     iconName = `ios-calendar`;
                 }
 
-                // You can return any component that you like here! We usually use an
-                // icon component from react-native-vector-icons
                 return <Ionicons name={iconName} size={25} color={tintColor} />;
             },
         }),
