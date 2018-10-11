@@ -12,7 +12,11 @@ const onItemPress = (navigation, sessionItemData) => {
   navigation.push("Session", { sessionItemData });
 };
 
-const SessionListItem = ({ navigation, sessionItemData }) => {
+const SessionListItem = ({
+  navigation,
+  sessionItemData,
+  favesIds
+}) => {
   return (
     <TouchableHighlight
       onPress={() => onItemPress(navigation, sessionItemData)}
@@ -22,14 +26,6 @@ const SessionListItem = ({ navigation, sessionItemData }) => {
         <Text style={styles.title}>{sessionItemData.title}</Text>
         <View style={styles.sessionItemMeta}>
           <Text style={styles.location}>{sessionItemData.location}</Text>
-          <Icons
-            name={Platform.select({
-              ios: "ios-heart",
-              android: "md-heart"
-            })}
-            size={20}
-            color="#cf392a"
-          />
         </View>
       </View>
     </TouchableHighlight>

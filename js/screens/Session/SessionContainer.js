@@ -3,6 +3,7 @@ import Loader from '../../components/Loader';
 import Session from './Session';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
+import FavesContext from "../../context/FavesContext";
 
 const speakerQuery = gql`
     query($id: ID) {
@@ -18,7 +19,6 @@ const speakerQuery = gql`
 export default class SessionContainer extends Component {
     render() {
         const { sessionItemData } = this.props.navigation.state.params;
-        console.log('SessionContainer: sessionItemData:', sessionItemData);
         return (
             <Query
                 query={speakerQuery}
@@ -27,10 +27,19 @@ export default class SessionContainer extends Component {
                     if (loading || !data) {
                         return <Loader />
                     }
-                    console.log('SessionContainer: data:', data);
-                    return <Session
-                        speakerData={data.Speaker}
-                        sessionItemData={sessionItemData} />
+                    console.log('id: sessionItemData.speaker.id :', sessionItemData.speaker.id );
+                    return (
+                        <FavesContext.Consumer>
+                          {values => {
+                            return (
+                              <Session
+                                navigation={this.props.navigation}
+                                faveIds={values}
+                              />
+                            );
+                          }}
+                        </FavesContext.Consumer>
+                      );
                 }}
             </Query>
         );

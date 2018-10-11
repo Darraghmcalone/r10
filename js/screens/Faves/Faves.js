@@ -1,24 +1,24 @@
-import React from 'react';
-import { ScrollView, View, Text, Image, Platform } from 'react-native';
-import { styles } from './styles';
-
-const Faves = () => {
-    return (
-        <ScrollView>
-            <View>
-                <Text>
-                    Faves
-                </Text>
-                <View>
-                    <Text style={styles.container}>I can be seen an all platforms.</Text>
-                    {Platform.OS === 'ios' && <Text>You'll only see me on iOS devices.</Text>}
-                    {Platform.Version && (
-                        <Text style={styles.container}>And I'm only on Android devices running Nougat.</Text>
-                    )}
-                </View>
-            </View>
-        </ScrollView>
-    )
-}
+import React from "react";
+import { StatusBar, ScrollView, Text } from "react-native";
+import SessionList from "../../components/SessionList";
+import styles from "./styles";
+const Faves = ({ sessions, navigation, faveIds }) => {
+  return (
+    <ScrollView>
+      <StatusBar barStyle="light-content" />
+      {sessions.length > 0 ? (
+        <SectionLists
+          sessions={sessions}
+          navigation={navigation}
+          favesIds={faveIds}
+        />
+      ) : (
+        <Text>
+          Add some Favorites to see them here!
+        </Text>
+      )}
+    </ScrollView>
+  );
+};
 
 export default Faves;
