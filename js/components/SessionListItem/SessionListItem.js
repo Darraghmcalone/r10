@@ -7,8 +7,6 @@ import { styles } from "./styles";
 import Icons from "react-native-vector-icons/Ionicons";
 
 const onItemPress = (navigation, sessionItemData) => {
-  console.log("onItemPress: sessionItemData:", sessionItemData);
-  console.log("onItemPress: navigation:", navigation);
   navigation.push("Session", { sessionItemData });
 };
 
