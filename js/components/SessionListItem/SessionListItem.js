@@ -10,11 +10,8 @@ const onItemPress = (navigation, sessionItemData) => {
   navigation.push("Session", { sessionItemData });
 };
 
-const SessionListItem = ({
-  navigation,
-  sessionItemData,
-  favesIds
-}) => {
+const SessionListItem = ({ navigation, sessionItemData, faveIds }) => {
+  //console.log("SessionListItem component: faveIds", faveIds);
   return (
     <TouchableHighlight
       onPress={() => onItemPress(navigation, sessionItemData)}

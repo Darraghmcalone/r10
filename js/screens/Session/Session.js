@@ -1,50 +1,66 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { ScrollView, Text, View, Platform } from "react-native";
+import { ScrollView, Text, View, Platform, Button } from "react-native";
 import moment from "moment";
 import { styles } from "./styles";
 import Separator from "../../components/Separator";
 import SessionSpeaker from "../../components/SessionSpeaker";
 import Icons from "react-native-vector-icons/Ionicons";
 
-export default class Session extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    const { speakerData, sessionItemData } = this.props;
-    return (
-      <ScrollView style={styles.container}>
-        <View style={styles.sessionMeta}>
-          <Text style={styles.location}>{sessionItemData.location}</Text>
+const Session = ({
+  speakerData,
+  sessionItemData,
+  faveIds,
+  addFave,
+  removeFave
+}) => {
+  console.log("this is faved", faveIds);
+  console.log("Session screen: sessionItemData:", sessionItemData);
+  const allFaves = [];
+  faveIds.map(item => allFaves.push(item.id));
+  const isFaved = allFaves.includes(sessionItemData.id);
+  return (
+    <ScrollView style={styles.container}>
+      <View style={styles.sessionMeta}>
+        <Text style={styles.location}>{sessionItemData.location}</Text>
+        {isFaved ? (
           <Icons
-            name={Platform.select({
-              ios: "ios-heart",
-              android: "md-heart"
-            })}
+            name={Platform.OS === "ios" ? "ios-heart" : "md-heart"}
+            color="red"
+            backgroundColor="transparent"
             size={20}
-            color="#cf392a"
           />
-        </View>
-        <Text style={styles.title}>{sessionItemData.title}</Text>
-        <Text style={styles.time}>
-          {moment
-            .utc(sessionItemData.startTime)
-            .utcOffset("-08:00")
-            .format("h:mm A")}
-        </Text>
-        {sessionItemData.description && (
-          <Text style={styles.description}>{sessionItemData.description}</Text>
-        )}
+        ) : null}
+      </View>
+      <Text style={styles.title}>{sessionItemData.title}</Text>
+      <Text style={styles.time}>
+        {moment
+          .utc(sessionItemData.startTime)
+          .utcOffset("-08:00")
+          .format("h:mm A")}
+      </Text>
+      {sessionItemData.description && (
+        <Text style={styles.description}>{sessionItemData.description}</Text>
+      )}
 
-        {speakerData.name && <SessionSpeaker speakerData={speakerData} />}
+      {speakerData.name && <SessionSpeaker speakerData={speakerData} />}
 
-        <Separator />
-      </ScrollView>
-    );
-  }
-}
+      <Separator />
+      {isFaved ? (
+        <Button
+          title="Remove from Faves"
+          onPress={() => removeFave(sessionItemData.id)}
+        />
+      ) : (
+        <Button
+          title="Add to Faves"
+          onPress={() => addFave(sessionItemData.id)}
+        />
+      )}
+    </ScrollView>
+  );
+};
+export default Session;
 
 Session.propTypes = {
   speakerData: PropTypes.shape({

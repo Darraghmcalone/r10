@@ -5,19 +5,18 @@ import SessionListHeader from "../SessionListHeader";
 import SessionListItem from "../SessionListItem";
 import Separator from "../Separator";
 
-const SessionList = ({ sessionData, favesIds }) => {
+const SessionList = ({ sessionData, faveIds }) => {
+  console.log("sessionData:", sessionData);
+  console.log("SessionList component: faveIds", faveIds);
   return (
     <SectionList
       sections={sessionData}
-      favesIds={favesIds}
+      faveIds={faveIds}
       renderSectionHeader={({ section }) => (
         <SessionListHeader time={section.title} />
       )}
-      renderItem={({ item, favesIds }) => (
-        <SessionListItem
-          favesIds={favesIds}
-          sessionItemData={item}
-        />
+      renderItem={({ item }) => (
+        <SessionListItem faveIds={faveIds} sessionItemData={item} />
       )}
       ItemSeparatorComponent={() => <Separator />}
       keyExtractor={item => item.id}
@@ -26,8 +25,8 @@ const SessionList = ({ sessionData, favesIds }) => {
   );
 };
 
-// SessionList.propTypes = {
-//   sessionData: PropTypes.array.isRequired,
-// };
+SessionList.propTypes = {
+  sessionData: PropTypes.array.isRequired
+};
 
 export default SessionList;

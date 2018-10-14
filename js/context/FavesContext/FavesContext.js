@@ -1,4 +1,3 @@
-
 import React, { createContext, Component } from "react";
 import { addFave, getFaves, removeFave } from "../../config/models";
 
@@ -18,7 +17,8 @@ class FavesProvider extends Component {
 
   getFavesSessionIds = () => {
     try {
-      this.setState({ favesIds: getFaves() });
+      console.log("get faves:", getFaves());
+      this.setState({ faveIds: getFaves() });
     } catch (error) {
       console.log(error);
     }

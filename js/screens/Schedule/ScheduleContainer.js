@@ -30,19 +30,18 @@ export default class ScheduleContainer extends Component {
             return <Loader />;
           }
           return (
-          <FavesContext.Consumer>
-            {values => {
-              faveIdArr = [];
-              values.faveIds.map(item => faveIdArr.push(item.id));
-              return (
-                <Schedule
-                  allSessions={formatSessionData(data.allSessions)}
-                  faveIds={values}
-                />
-              );
-            }}
-          </FavesContext.Consumer>
-          )
+            <FavesContext.Consumer>
+              {values => {
+                console.log("these are the faves ids:", values.faveIds);
+                return (
+                  <Schedule
+                    allSessions={formatSessionData(data.allSessions)}
+                    faveIds={values.faveIds}
+                  />
+                );
+              }}
+            </FavesContext.Consumer>
+          );
         }}
       </Query>
     );

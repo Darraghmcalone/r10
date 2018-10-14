@@ -10,12 +10,10 @@ const Faves = ({ sessions, navigation, faveIds }) => {
         <SectionLists
           sessions={sessions}
           navigation={navigation}
-          favesIds={faveIds}
+          faveIds={faveIds}
         />
       ) : (
-        <Text>
-          Add some Favorites to see them here!
-        </Text>
+        <Text>Add some Favorites to see them here!</Text>
       )}
     </ScrollView>
   );
