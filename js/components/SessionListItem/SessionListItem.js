@@ -11,24 +11,33 @@ const onItemPress = (navigation, sessionItemData) => {
 };
 
 const SessionListItem = ({ navigation, sessionItemData, faveIds }) => {
-  //console.log("SessionListItem component: faveIds", faveIds);
+  const allFaves = [];
+  faveIds.map(item => allFaves.push(item.id));
+  const isFaved = allFaves.includes(sessionItemData.id);
   return (
     <TouchableHighlight
       onPress={() => onItemPress(navigation, sessionItemData)}
       underlayColor={colours.lightGrey}
     >
       <View style={styles.sessionItem}>
-        <Text style={styles.title}>{sessionItemData.title}</Text>
         <View style={styles.sessionItemMeta}>
-          <Text style={styles.location}>{sessionItemData.location}</Text>
+          <Text style={styles.title}>{sessionItemData.title}</Text>
+          {isFaved ? (
+            <Icons
+              name={Platform.OS === "ios" ? "ios-heart" : "md-heart"}
+              color="red"
+              backgroundColor="transparent"
+              size={20}
+            />
+          ) : null}
         </View>
+        <Text style={styles.location}>{sessionItemData.location}</Text>
       </View>
     </TouchableHighlight>
   );
 };
 
 SessionListItem.propTypes = {
-  // faveIds: PropTypes.array.isRequired,
   navigation: PropTypes.object.isRequired,
   sessionItemData: PropTypes.shape({
     description: PropTypes.string,
