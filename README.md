@@ -4,7 +4,7 @@
 
 This repository implements R10, an react native application for a fictional development conference.
 
-### Technologies
+# Technologies
 
 ## Front End
 - React Native
@@ -21,8 +21,8 @@ This repository implements R10, an react native application for a fictional deve
 - Redirection to wikipedia about the speaker
 - Native application (Android and IOS)
 
-## Installation 
-This project does not work with node version 10.x, it works with v9.11.2.\
+# Installation 
+This project does not work with node version 10.12.0, it works with v9.11.2.\
 This project also does not work with JDK 1.8.0_20, you have to upgrade to JDK 1.8.0_181.
 
 1. Download or clone the repo.
