@@ -9,7 +9,7 @@
     "test": "jest"
   },
   "engines": {
-    "node": ">=v9.11.2"
+    "node": "<=v9.11.2"
   },
   "dependencies": {
     "apollo-boost": "0.1.15",
