@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Faves from './Faves';
-import Loader from '../../components/Loader';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import { formatSessionData } from '../../lib/helpers';
+import Faves from './Faves';
 import FavesContext from '../../context/FavesContext';
+import Loader from '../../components/Loader';
 
 const allSessionsQuery = gql`
   query {

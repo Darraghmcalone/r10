@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { ScrollView, Text, View, Platform, Button } from 'react-native';
+import React from 'react';
+import { ScrollView, Text, View, Platform } from 'react-native';
+import Icons from 'react-native-vector-icons/Ionicons';
 import moment from 'moment';
+import PropTypes from 'prop-types';
 import { styles } from './styles';
+import GradientButton from '../../components/GradientButton';
 import Separator from '../../components/Separator';
 import SessionSpeaker from '../../components/SessionSpeaker';
-import Icons from 'react-native-vector-icons/Ionicons';
 
 const Session = ({
   speakerData,
@@ -45,13 +46,13 @@ const Session = ({
 
       <Separator />
       {isFaved ? (
-        <Button
-          title="Remove from Faves"
+        <GradientButton
+          buttonText="Remove from Faves"
           onPress={() => removeFave(sessionItemData.id)}
         />
       ) : (
-        <Button
-          title="Add to Faves"
+        <GradientButton
+          buttonText="Add to Faves"
           onPress={() => addFave(sessionItemData.id)}
         />
       )}

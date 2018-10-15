@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Schedule from './Schedule';
-import Loader from '../../components/Loader';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import { formatSessionData } from '../../lib/helpers';
 import FavesContext from '../../context/FavesContext';
+import Loader from '../../components/Loader';
+import Schedule from './Schedule';
 
 const allSessionsQuery = gql`
   query {

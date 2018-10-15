@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
-import About from './About';
-import Loader from '../../components/Loader';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
+import About from './About';
+import Loader from '../../components/Loader';
 
 const allConductsquery = gql`
   query {
