@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Text, TouchableOpacity, View } from "react-native";
-import LinearGradient from "react-native-linear-gradient";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Text, TouchableOpacity, View } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 
-import { styles } from "./styles";
-import { colours } from "../../config/styles";
+import { styles } from './styles';
+import { colours } from '../../config/styles';
 
 const GradientButton = ({ buttonText, onPress }) => {
   return (
@@ -25,7 +25,7 @@ const GradientButton = ({ buttonText, onPress }) => {
 
 GradientButton.propTypes = {
   buttonText: PropTypes.string.isRequired,
-  onPress: PropTypes.func.isRequired
+  onPress: PropTypes.func.isRequired,
 };
 
 export default GradientButton;

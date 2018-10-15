@@ -1,14 +1,14 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
-import { withNavigation } from "react-navigation";
-import Icon from "react-native-vector-icons/Ionicons";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { withNavigation } from 'react-navigation';
+import Icon from 'react-native-vector-icons/Ionicons';
 
-import { goToUrl } from "../../lib/helpers";
-import GradientButton from "../../components/GradientButton";
+import { goToUrl } from '../../lib/helpers';
+import GradientButton from '../../components/GradientButton';
 
-import { colours } from "../../config/styles";
-import { styles } from "./styles";
+import { colours } from '../../config/styles';
+import { styles } from './styles';
 
 const Speaker = ({ navigation, speakerData }) => {
   return (
@@ -51,8 +51,8 @@ Speaker.propTypes = {
     bio: PropTypes.string,
     image: PropTypes.string,
     name: PropTypes.string.isRequired,
-    url: PropTypes.string
-  }).isRequired
+    url: PropTypes.string,
+  }).isRequired,
 };
 
 export default withNavigation(Speaker);

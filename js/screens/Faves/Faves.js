@@ -1,6 +1,6 @@
-import React from "react";
-import { ScrollView, Text } from "react-native";
-import SessionList from "../../components/SessionList";
+import React from 'react';
+import { ScrollView, Text } from 'react-native';
+import SessionList from '../../components/SessionList';
 
 const Faves = ({ allSessions, faveIds }) => {
   return (

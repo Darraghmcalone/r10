@@ -1,21 +1,21 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {
   View,
   Text,
   TouchableOpacity,
   Platform,
-  UIManager
-} from "react-native";
-import { styles } from "./styles";
+  UIManager,
+} from 'react-native';
+import { styles } from './styles';
 
 export default class ConductItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      opened: false
+      opened: false,
     };
-    if (Platform.OS === "android") {
+    if (Platform.OS === 'android') {
       UIManager.setLayoutAnimationEnabledExperimental &&
         UIManager.setLayoutAnimationEnabledExperimental(true);
     }
@@ -23,7 +23,7 @@ export default class ConductItem extends Component {
   }
   _onPress() {
     this.setState({
-      opened: !this.state.opened
+      opened: !this.state.opened,
     });
   }
   render() {
@@ -33,7 +33,7 @@ export default class ConductItem extends Component {
       <View>
         <TouchableOpacity onPress={this._onPress}>
           <Text style={styles.conductHeader}>
-            {this.state.opened ? "- " : "+ "}
+            {this.state.opened ? '- ' : '+ '}
             {itemData.title}
           </Text>
           {this.state.opened && (
@@ -48,6 +48,6 @@ export default class ConductItem extends Component {
 ConductItem.propTypes = {
   itemData: PropTypes.shape({
     title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired
-  })
+    description: PropTypes.string.isRequired,
+  }),
 };

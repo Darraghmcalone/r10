@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { SectionList } from "react-native";
-import SessionListHeader from "../SessionListHeader";
-import SessionListItem from "../SessionListItem";
-import Separator from "../Separator";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { SectionList } from 'react-native';
+import SessionListHeader from '../SessionListHeader';
+import SessionListItem from '../SessionListItem';
+import Separator from '../Separator';
 
 const SessionList = ({ sessionData, faveIds }) => {
   return (
@@ -17,14 +17,14 @@ const SessionList = ({ sessionData, faveIds }) => {
         <SessionListItem faveIds={faveIds} sessionItemData={item} />
       )}
       ItemSeparatorComponent={() => <Separator />}
-      keyExtractor={item => item.id}
+      keyExtractor={(item) => item.id}
       stickySectionHeadersEnabled
     />
   );
 };
 
 SessionList.propTypes = {
-  sessionData: PropTypes.array.isRequired
+  sessionData: PropTypes.array.isRequired,
 };
 
 export default SessionList;

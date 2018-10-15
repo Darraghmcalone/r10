@@ -1,3 +1,3 @@
-import SessionSpeaker from "./SessionSpeaker";
+import SessionSpeaker from './SessionSpeaker';
 
 export default SessionSpeaker;

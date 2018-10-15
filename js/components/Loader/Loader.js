@@ -1,7 +1,7 @@
-import React from "react";
-import { ActivityIndicator, View } from "react-native";
-import { styles } from "./styles";
-import { colours } from "../../config/styles";
+import React from 'react';
+import { ActivityIndicator, View } from 'react-native';
+import { styles } from './styles';
+import { colours } from '../../config/styles';
 
 const Loader = () => {
   return (

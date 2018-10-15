@@ -1,12 +1,12 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
 
-import { colours, fonts } from "../../config/styles";
+import { colours, fonts } from '../../config/styles';
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center"
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   linearGradient: {
     borderRadius: 22,
@@ -14,11 +14,11 @@ export const styles = StyleSheet.create({
     paddingBottom: 10,
     paddingLeft: 16,
     paddingRight: 16,
-    paddingTop: 10
+    paddingTop: 10,
   },
   buttonText: {
-    backgroundColor: "transparent",
+    backgroundColor: 'transparent',
     color: colours.white,
-    fontFamily: fonts.fontMain
-  }
+    fontFamily: fonts.fontMain,
+  },
 });

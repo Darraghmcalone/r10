@@ -1,18 +1,18 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Text, TouchableHighlight, View, Platform } from "react-native";
-import { withNavigation } from "react-navigation";
-import { colours } from "../../config/styles";
-import { styles } from "./styles";
-import Icons from "react-native-vector-icons/Ionicons";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Text, TouchableHighlight, View, Platform } from 'react-native';
+import { withNavigation } from 'react-navigation';
+import { colours } from '../../config/styles';
+import { styles } from './styles';
+import Icons from 'react-native-vector-icons/Ionicons';
 
 const onItemPress = (navigation, sessionItemData) => {
-  navigation.push("Session", { sessionItemData });
+  navigation.push('Session', { sessionItemData });
 };
 
 const SessionListItem = ({ navigation, sessionItemData, faveIds }) => {
   const allFaves = [];
-  faveIds.map(item => allFaves.push(item.id));
+  faveIds.map((item) => allFaves.push(item.id));
   const isFaved = allFaves.includes(sessionItemData.id);
   return (
     <TouchableHighlight
@@ -24,7 +24,7 @@ const SessionListItem = ({ navigation, sessionItemData, faveIds }) => {
           <Text style={styles.title}>{sessionItemData.title}</Text>
           {isFaved ? (
             <Icons
-              name={Platform.OS === "ios" ? "ios-heart" : "md-heart"}
+              name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'}
               color="red"
               backgroundColor="transparent"
               size={20}
@@ -44,11 +44,11 @@ SessionListItem.propTypes = {
     id: PropTypes.string.isRequired,
     location: PropTypes.string,
     speaker: PropTypes.shape({
-      id: PropTypes.string
+      id: PropTypes.string,
     }),
     startTime: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired
-  })
+    title: PropTypes.string.isRequired,
+  }),
 };
 
 export default withNavigation(SessionListItem);

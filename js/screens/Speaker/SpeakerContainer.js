@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import Speaker from "./Speaker";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Speaker from './Speaker';
 
 export default class SpeakerContainer extends Component {
   render() {
@@ -11,5 +11,5 @@ export default class SpeakerContainer extends Component {
 }
 
 SpeakerContainer.propTypes = {
-  navigation: PropTypes.object.isRequired
+  navigation: PropTypes.object.isRequired,
 };

@@ -1,3 +1,3 @@
-import ConductItem from "./ConductItem";
+import ConductItem from './ConductItem';
 
 export default ConductItem;

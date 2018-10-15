@@ -1,14 +1,14 @@
-import React from "react";
-import { ScrollView, View, Text, Image } from "react-native";
-import { styles } from "./styles";
-import ConductItem from "../../components/ConductItem";
+import React from 'react';
+import { ScrollView, View, Text, Image } from 'react-native';
+import { styles } from './styles';
+import ConductItem from '../../components/ConductItem';
 
 const About = ({ allConducts }) => {
   return (
     <ScrollView style={styles.container}>
       <Image
         style={styles.image}
-        source={require("../../assets/images/r10_logo.png")}
+        source={require('../../assets/images/r10_logo.png')}
       />
       <Text style={styles.paragraph}>
         R10 is a conference that focuses on just about any topic related to dev.
@@ -19,7 +19,7 @@ const About = ({ allConducts }) => {
       </Text>
       <Text style={styles.heading}>Code of Conduct</Text>
       <View>
-        {allConducts.map(item => (
+        {allConducts.map((item) => (
           <ConductItem key={item.id} itemData={item} />
         ))}
       </View>

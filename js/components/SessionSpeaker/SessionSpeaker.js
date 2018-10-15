@@ -1,12 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Image, Text, View, TouchableOpacity } from "react-native";
-import { withNavigation } from "react-navigation";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Image, Text, View, TouchableOpacity } from 'react-native';
+import { withNavigation } from 'react-navigation';
 
-import { styles } from "./styles";
+import { styles } from './styles';
 
 const onSpeakerPress = (navigation, speakerData) => {
-  navigation.push("Speaker", { speakerData });
+  navigation.push('Speaker', { speakerData });
 };
 
 const SessionSpeaker = ({ navigation, speakerData }) => {
@@ -35,8 +35,8 @@ SessionSpeaker.propTypes = {
     bio: PropTypes.string,
     image: PropTypes.string,
     name: PropTypes.string.isRequired,
-    url: PropTypes.string
-  })
+    url: PropTypes.string,
+  }),
 };
 
 export default withNavigation(SessionSpeaker);

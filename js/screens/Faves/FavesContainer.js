@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import Faves from "./Faves";
-import Loader from "../../components/Loader";
-import gql from "graphql-tag";
-import { Query } from "react-apollo";
-import { formatSessionData } from "../../lib/helpers";
-import FavesContext from "../../context/FavesContext";
+import React, { Component } from 'react';
+import Faves from './Faves';
+import Loader from '../../components/Loader';
+import gql from 'graphql-tag';
+import { Query } from 'react-apollo';
+import { formatSessionData } from '../../lib/helpers';
+import FavesContext from '../../context/FavesContext';
 
 const allSessionsQuery = gql`
   query {
@@ -31,10 +31,10 @@ export default class FavesContainer extends Component {
           }
           return (
             <FavesContext.Consumer>
-              {values => {
+              {(values) => {
                 const allFaves = [];
-                values.faveIds.map(item => allFaves.push(item.id));
-                const filteredSessionIds = data.allSessions.filter(session =>
+                values.faveIds.map((item) => allFaves.push(item.id));
+                const filteredSessionIds = data.allSessions.filter((session) =>
                   allFaves.includes(session.id)
                 );
                 return (

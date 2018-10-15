@@ -1,7 +1,7 @@
-import React from "react";
-import { PropTypes } from "prop-types";
-import { ScrollView } from "react-native";
-import SessionList from "../../components/SessionList";
+import React from 'react';
+import { PropTypes } from 'prop-types';
+import { ScrollView } from 'react-native';
+import SessionList from '../../components/SessionList';
 
 const Schedule = ({ allSessions, faveIds }) => {
   return (
@@ -12,7 +12,7 @@ const Schedule = ({ allSessions, faveIds }) => {
 };
 
 Schedule.propTypes = {
-  allSessions: PropTypes.array.isRequired
+  allSessions: PropTypes.array.isRequired,
 };
 
 export default Schedule;

@@ -1,5 +1,5 @@
-import React, { createContext, Component } from "react";
-import { addFave, getFaves, removeFave } from "../../config/models";
+import React, { createContext, Component } from 'react';
+import { addFave, getFaves, removeFave } from '../../config/models';
 
 const FavesContext = createContext();
 
@@ -7,7 +7,7 @@ class FavesProvider extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      faveIds: []
+      faveIds: [],
     };
   }
 
@@ -23,7 +23,7 @@ class FavesProvider extends Component {
     }
   };
 
-  addFaveSession = sessionId => {
+  addFaveSession = (sessionId) => {
     try {
       addFave(sessionId);
       this.getFavesSessionIds();
@@ -32,7 +32,7 @@ class FavesProvider extends Component {
     }
   };
 
-  removeFaveSession = sessionId => {
+  removeFaveSession = (sessionId) => {
     try {
       removeFave(sessionId);
       this.getFavesSessionIds();
@@ -48,7 +48,7 @@ class FavesProvider extends Component {
           ...this.state,
           getFaves: this.getFavesSessionIds,
           addFave: this.addFaveSession,
-          removeFave: this.removeFaveSession
+          removeFave: this.removeFaveSession,
         }}
       >
         {this.props.children}

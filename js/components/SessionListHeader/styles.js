@@ -1,5 +1,5 @@
-import { StyleSheet } from "react-native";
-import { colours, fonts } from "../../config/styles";
+import { StyleSheet } from 'react-native';
+import { colours, fonts } from '../../config/styles';
 
 export const styles = StyleSheet.create({
   timeHeader: {
@@ -9,6 +9,6 @@ export const styles = StyleSheet.create({
     paddingTop: 5,
     paddingBottom: 5,
     paddingLeft: 12,
-    paddingRight: 12
-  }
+    paddingRight: 12,
+  },
 });
