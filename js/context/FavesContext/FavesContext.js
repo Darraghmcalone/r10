@@ -17,7 +17,6 @@ class FavesProvider extends Component {
 
   getFavesSessionIds = () => {
     try {
-      console.log("get faves:", getFaves());
       this.setState({ faveIds: getFaves() });
     } catch (error) {
       console.log(error);

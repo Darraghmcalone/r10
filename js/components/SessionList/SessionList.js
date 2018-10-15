@@ -6,8 +6,6 @@ import SessionListItem from "../SessionListItem";
 import Separator from "../Separator";
 
 const SessionList = ({ sessionData, faveIds }) => {
-  console.log("sessionData:", sessionData);
-  console.log("SessionList component: faveIds", faveIds);
   return (
     <SectionList
       sections={sessionData}

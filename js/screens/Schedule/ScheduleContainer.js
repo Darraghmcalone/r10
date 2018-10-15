@@ -32,7 +32,6 @@ export default class ScheduleContainer extends Component {
           return (
             <FavesContext.Consumer>
               {values => {
-                console.log("these are the faves ids:", values.faveIds);
                 return (
                   <Schedule
                     allSessions={formatSessionData(data.allSessions)}

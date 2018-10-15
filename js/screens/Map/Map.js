@@ -1,6 +1,5 @@
 import React from "react";
-import { ScrollView, View, Text, Image } from "react-native";
-import { styles } from "./styles";
+import { ScrollView, View, Text } from "react-native";
 
 const Map = () => {
   return (

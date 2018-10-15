@@ -14,8 +14,6 @@ const Session = ({
   addFave,
   removeFave
 }) => {
-  console.log("this is faved", faveIds);
-  console.log("Session screen: sessionItemData:", sessionItemData);
   const allFaves = [];
   faveIds.map(item => allFaves.push(item.id));
   const isFaved = allFaves.includes(sessionItemData.id);

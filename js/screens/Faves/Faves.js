@@ -1,7 +1,7 @@
 import React from "react";
-import { StatusBar, ScrollView, Text } from "react-native";
+import { ScrollView, Text } from "react-native";
 import SessionList from "../../components/SessionList";
-import styles from "./styles";
+
 const Faves = ({ allSessions, faveIds }) => {
   return (
     <ScrollView>
