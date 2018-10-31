@@ -4,6 +4,10 @@
 
 This repository implements R10, an react native application for a fictional development conference.
 
+
+![](android-session-screen.gif)      ![](ios-faves-about-screen.gif)
+
+
 # Technologies
 
 ## Front End
