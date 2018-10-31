@@ -65,7 +65,6 @@ const MapStack = createStackNavigator(
 export default createBottomTabNavigator(
   {
     Schedule: { screen: ScheduleStack },
-    Map: { screen: MapStack },
     Faves: { screen: FavesStack },
     About: { screen: AboutStack },
   },

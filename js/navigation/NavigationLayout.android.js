@@ -78,7 +78,6 @@ FavesStack.navigationOptions = {
 export default (MyApp = createDrawerNavigator(
   {
     Schedule: ScheduleStack,
-    Map: MapStack,
     Faves: FavesStack,
     About: AboutStack,
   },
